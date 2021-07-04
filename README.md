@@ -1,10 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
-In the project directory, you can run:
+In the frontend project directory, you can run:
 
 ### `yarn start`
 
@@ -30,6 +26,10 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `yarn eject`
+
+In the frontend project directory, you can run:
+
+### `yarn dev`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
