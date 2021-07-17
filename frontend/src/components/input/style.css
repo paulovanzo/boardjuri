@@ -1,0 +1,14 @@
+input {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1;
+    padding-block: 5px;
+    padding-inline: 2px;
+    border-color: var(--cor-secundaria);
+}
+
+input:focus{
+    outline: none;
+}
