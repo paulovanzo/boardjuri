@@ -7,14 +7,34 @@ main {
 
 .cardLogin {
     width: 75%;
-    height: 85%;
-    padding: 12px;
-
+    height: 60%;
+    padding: 10px;
     background-color: var(--cor-primaria-dark);
     text-align: center;
 }
 
+.titulo {
+    font-size: 5.4rem;
+
+}
+
+.icon {
+    margin-right: 5px;
+    
+}
+
 .input {
-    width: 90%;
-    margin-block: 10px;
+    width: 80%;
+    margin-block: 12px;
+}
+
+.btnEsqueciSenha {
+    font-size: 1rem;
+}
+
+.botaoLogar {
+    width: 70%;
+    height: 40px;
+    margin-top: 70px;
+    
 }
