@@ -7,10 +7,15 @@ main {
 
 .cardLogin {
     width: 75%;
-    height: 60%;
+    height: 56%;
+    min-height: 330px;
+    max-width: 400px;
     padding: 10px;
     background-color: var(--cor-primaria-dark);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .titulo {
@@ -26,15 +31,43 @@ main {
 .input {
     width: 80%;
     margin-block: 12px;
+    font-size: 1.25rem;
 }
 
-.btnEsqueciSenha {
-    font-size: 1rem;
+.link {
+    font-size: 0.9rem;
+
 }
 
 .botaoLogar {
     width: 70%;
     height: 40px;
-    margin-top: 70px;
+    margin-block: 25px;
     
+}
+
+@media (min-width: 800px) {
+
+    .input {
+        margin-block: 18px;
+    }
+
+    .cardLogin {
+        height: 75%;
+    }
+
+    .botaoLogar {
+        margin-block: 32px;
+    }
+}
+
+@media (max-height: 500px) {
+
+    .input {
+        margin-block: 10px;
+    }
+
+    .botaoLogar {
+        margin-block: 20px;
+    }
 }

@@ -1,14 +1,14 @@
 :root {
-    --cor-primaria: #001D3D;
-    --cor-primaria-light: #003566;
-    --cor-primaria-dark: #00122e;
-    --cor-secundaria: #FFC300;
-    --cor-secundaria-light: #ffd60a;
-    --cor-secundaria-dark: #cc9c00;
+    --cor-primaria: #5A189A;
+    --cor-primaria-light: #9D4EDD;
+    --cor-primaria-dark: #240046;
+    --cor-secundaria: #FF8500;
+    --cor-secundaria-light: #FF9E00;
+    --cor-secundaria-dark: #FF6D00;
     --cor-font: #d9d9d9;
     --cor-font-secundaria: #bfbfbf;
 
-    font-size: 70%;
+    font-size: 77%;
 }
 
 @font-face {
@@ -51,20 +51,16 @@ html, body, #root {
 }
 
 body {
-    background-image: url("./assets/images/background/background_6.png");
+    background-image: url("./assets/images/background/background_1.png");
 }
 
 body, input, button, textarea, a {
-    font-size: 1.5rem;
+
     font-family: Roboto;
 }
 
 body, input, textarea, a {
     color: var(--cor-font-secundaria);
-}
-
-a {
-    text-decoration: none;
 }
 
 h1, h2 {
@@ -73,7 +69,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
 }
 
 input {
@@ -89,4 +85,10 @@ input {
 
 input:focus{
     outline: none;
+}
+
+@media (min-width: 800px) {
+    :root {
+        font-size: 79%;
+    }
 }

@@ -19,8 +19,11 @@ function Login() {
                     <IconLock className="icon"/>
                     <input className="input" type="text" placeholder="Senha"/>
                 </div>
-                <a href="aaa" className="btnEsqueciSenha">Esqueceu a senha?</a>
-                <CustomBotao className="botaoLogar"> Logar </CustomBotao>
+                <a href="#" className="link">Esqueceu a senha?</a>
+                <div>
+                    <CustomBotao className="botaoLogar"> Entrar </CustomBotao>
+                </div>
+                <a href="#" className="link">Ainda não se cadastrou?</a>
             </div>
         </main>
     )
