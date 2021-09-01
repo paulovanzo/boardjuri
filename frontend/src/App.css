@@ -72,21 +72,6 @@ h1 {
     font-size: 1.9rem;
 }
 
-input {
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1;
-    padding-block: 4px;
-    padding-inline: 2px;
-    border-color: var(--cor-font);
-}
-
-input:focus{
-    outline: none;
-}
-
 @media (min-width: 800px) {
     :root {
         font-size: 79%;

@@ -1,29 +1,30 @@
 import React from "react";
-import IconAcCi from '@material-ui/icons/AccountCircleOutlined';
+import IconEmail from '@material-ui/icons/EmailOutlined'
 import IconLock from '@material-ui/icons/LockOutlined';
 import CustomBotao from '../../components/CustomBotao';
-import './style.css'
+import styles from './style.module.css'
+import CustomInput from "../../components/CustomInput";
 
 function Login() {
     return (
         <main>
-            <div className="cardLogin">
-                <h1 className="titulo">
+            <div className={styles.cardLogin}>
+                <h1 className={styles.titulo}>
                     LOGIN
                 </h1>
-                <div className="campo">
-                    <IconAcCi className="icon" />
-                    <input className="input" type="text" placeholder="Usuário"/>
+                <div className={styles.campo}>
+                    <IconEmail className={styles.icon} />
+                    <CustomInput className={styles.input} type="text" placeholder="Email"/>
                 </div>
-                <div className="campo">
-                    <IconLock className="icon"/>
-                    <input className="input" type="text" placeholder="Senha"/>
+                <div className={styles.campo}>
+                    <IconLock className={styles.icon}/>
+                    <CustomInput className={styles.input} type="text" placeholder="Senha"/>
                 </div>
-                <a href="#" className="link">Esqueceu a senha?</a>
+                <a href="#" className={styles.link}>Esqueceu a senha?</a>
                 <div>
-                    <CustomBotao className="botaoLogar"> Entrar </CustomBotao>
+                    <CustomBotao className={styles.botaoLogar}> Entrar </CustomBotao>
                 </div>
-                <a href="#" className="link">Ainda não se cadastrou?</a>
+                <a href="/cadastro" className={styles.link}>Ainda não se cadastrou?</a>
             </div>
         </main>
     )
