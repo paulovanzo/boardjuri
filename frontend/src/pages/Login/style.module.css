@@ -1,0 +1,73 @@
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLogin {
+    width: 75%;
+    height: 56%;
+    min-height: 330px;
+    max-width: 400px;
+    padding: 10px;
+    background-color: var(--cor-primaria-dark);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo {
+    font-size: 5.4rem;
+
+}
+
+.icon {
+    margin-right: 5px;
+    
+}
+
+.input {
+    width: 80%;
+    margin-block: 12px;
+    font-size: 1.25rem;
+}
+
+.link {
+    font-size: 0.9rem;
+
+}
+
+.botaoLogar {
+    width: 70%;
+    height: 40px;
+    margin-block: 25px;
+    
+}
+
+@media (min-width: 800px) {
+
+    .input {
+        margin-block: 18px;
+    }
+
+    .cardLogin {
+        height: 75%;
+    }
+
+    .botaoLogar {
+        margin-block: 32px;
+    }
+}
+
+@media (max-height: 500px) {
+
+    .input {
+        margin-block: 10px;
+    }
+
+    .botaoLogar {
+        margin-block: 20px;
+    }
+}

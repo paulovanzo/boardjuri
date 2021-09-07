@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+:root {
+    --cor-primaria: #5A189A;
+    --cor-primaria-light: #9D4EDD;
+    --cor-primaria-dark: #240046;
+    --cor-secundaria: #FF8500;
+    --cor-secundaria-light: #FF9E00;
+    --cor-secundaria-dark: #FF6D00;
+    --cor-font: #d9d9d9;
+    --cor-font-secundaria: #bfbfbf;
+
+    font-size: 77%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto-Regular.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto-Italic.ttf);
+    font-style: italic;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto-Bold.ttf);
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: Oswald;
+    src: url(./assets/fonts/Oswald-Regular.ttf);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: Oswald;
+    src: url(./assets/fonts/Oswald-SemiBold.ttf);
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+    box-shadow: blue;
+}
+
+body {
+    background-image: url("./assets/images/background/background_1.png");
+}
+
+body, input, button, textarea, a {
+
+    font-family: Roboto;
+}
+
+body, input, textarea, a {
+    color: var(--cor-font-secundaria);
+}
+
+h1, h2 {
+    font-family: Oswald;
+    color: var(--cor-font);
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        font-size: 79%;
+    }
 }
