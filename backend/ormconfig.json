@@ -1,13 +1,13 @@
 {
     "type": "mysql", 
     "host": "localhost", 
-    "port": 3306,
+    "port": "3306",
     "synchronize": true,
     "logging": false,
     "username": "dbuser", 
-    "password": "dbuser", 
-    "database": "school", 
+    "password": "DBUsers12*", 
+    "database": "dbuser", 
     "entities": ["./src/entities/*.js"], "migrations": ["./src/database/migration/*.js"], "cli": { 
-        "migrationsDir": "migration" 
+        "migrationsDir": "./src/database/migration" 
     }
 }
