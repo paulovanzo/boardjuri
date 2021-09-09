@@ -5,28 +5,7 @@ export class Usuario1630975872355 implements MigrationInterface {
     await queryRunner.createTable(
       new Table({
         name: "Usuario",
-        columns: [
-          {
-            name: "rua",
-            type: "string",
-          },
-          {
-            name: "bairro",
-            type: "string",
-          },
-          {
-            name: "cidade",
-            type: "string",
-          },
-          {
-            name: "numero",
-            type: "string",
-          },
-          {
-            name: "cep",
-            type: "integer",
-          },
-        ],
+        columns: [],
         foreignKeys: [
           {
             name: "email_usuario",

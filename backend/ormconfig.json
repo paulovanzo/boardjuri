@@ -6,8 +6,8 @@
     "logging": false,
     "username": "dbuser", 
     "password": "DBUsers12*", 
-    "database": "dbuser", 
-    "entities": ["./src/entities/*.js"], "migrations": ["./src/database/migration/*.js"], "cli": { 
+    "database": "mydb", 
+    "entities": ["./src/entities/*.ts"], "migrations": ["./src/database/migration/*.ts"], "cli": { 
         "migrationsDir": "./src/database/migration" 
     }
 }

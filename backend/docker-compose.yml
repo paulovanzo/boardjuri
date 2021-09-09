@@ -3,15 +3,14 @@ version: "3"
 services:
   db:
     image: mysql:5.7
-    restart: always
+    restart: unless-stopped
     ports:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: dbuser
       MYSQL_ROOT_PASSWORD: DBUsers12*
-      MYSQL_USER: dbuser
+      MYSQL_USER: root
       MYSQL_PASSWORD: DBUsers12*
-      MYSQL_ROOT_HOST: "%"
   backend:
     depends_on:
       - db

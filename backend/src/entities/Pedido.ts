@@ -22,6 +22,6 @@ export default class Pedido {
   sobrenome: string;
 
   @ManyToOne(() => Cartao, (cartao) => cartao.pedidos)
-  @JoinColumn({ name: "email_usuario" })
+  @JoinColumn({ name: "email_usuario_pedido" })
   cartao: Cartao;
 }

@@ -7,10 +7,13 @@ export default {
       //senha: usuario.senha,
       //nome: usuario.nome,
       //sobrenome: usuario.sobrenome,
-      rua: usuario.rua,
-      bairro: usuario.bairro,
-      cidade: usuario.cidade,
-      cep: usuario.cep,
+      enderecos: usuario.enderecos.map((endereco, i) => {
+        rua: endereco.rua;
+        bairro: endereco.bairro;
+        cidade: endereco.cidade;
+        cep: endereco.cep;
+        numero: endereco.cep;
+      }),
     };
   },
 
