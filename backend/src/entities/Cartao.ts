@@ -1,15 +1,17 @@
 import {
   Column,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   Entity,
+  ManyToOne,
   OneToMany,
   JoinColumn,
 } from "typeorm";
 import Pedido from "./Pedido";
+import Usuario from "./Usuario";
 
 @Entity("Cartao")
 export default class Cartao {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   numero: string;
 
   @Column()
@@ -27,6 +29,12 @@ export default class Cartao {
   @OneToMany(() => Pedido, (pedido) => pedido.cartao, {
     cascade: ["insert", "update"],
   })
-  @JoinColumn({ name: "email_usuario_pedido" })
+  @JoinColumn({ name: "email" })
   pedidos: Pedido[];
+
+  @ManyToOne(() => Usuario, (usuario: Usuario) => usuario.cartoes, {
+    cascade: ["insert", "update"],
+  })
+  @JoinColumn({ name: "email" })
+  usuario: Usuario;
 }

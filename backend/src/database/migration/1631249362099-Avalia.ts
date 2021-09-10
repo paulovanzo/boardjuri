@@ -1,47 +1,50 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Cartao1630982145567 implements MigrationInterface {
+export class Avalia1631249362099 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "Cartao",
+        name: "Avalia",
         columns: [
           {
-            name: "cartao_numero",
-            type: "integer",
-            isPrimary: true,
-            isGenerated: true,
-            generationStrategy: "increment",
+            name: "complexidade",
+            type: "number",
           },
           {
-            name: "status",
-            type: "boolean",
+            name: "avaliacao",
+            type: "number",
           },
           {
-            name: "nome",
+            name: "interacao",
+            type: "number",
+          },
+          {
+            name: "comentario",
             type: "string",
-          },
-          {
-            name: "vencimento",
-            type: "Date",
-          },
-          {
-            name: "cvv",
-            type: "integer",
           },
           {
             name: "email",
             type: "string",
           },
+          {
+            name: "id",
+            type: "number",
+          },
         ],
         foreignKeys: [
           {
-            name: "UsuarioCartao",
+            name: "email",
             columnNames: ["email"],
             referencedTableName: "Usuario",
             referencedColumnNames: ["email"],
             onUpdate: "CASCADE",
-            onDelete: "CASCADE",
+          },
+          {
+            name: "id",
+            columnNames: ["id"],
+            referencedTableName: "Boardgame",
+            referencedColumnNames: ["id"],
+            onUpdate: "CASCADE",
           },
         ],
       })
@@ -49,6 +52,6 @@ export class Cartao1630982145567 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("Pessoa");
+    await queryRunner.dropTable("Avalia");
   }
 }

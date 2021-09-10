@@ -1,17 +1,8 @@
-import {
-  Column,
-  Entity,
-  ManyToOne,
-  JoinColumn,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, ManyToOne, JoinColumn, PrimaryColumn } from "typeorm";
 import Usuario from "./Usuario";
 
 @Entity("Endereco")
 export default class Endereco {
-  @PrimaryGeneratedColumn()
-  id: number;
-
   @Column()
   rua: string;
 
@@ -30,6 +21,9 @@ export default class Endereco {
   @ManyToOne(() => Usuario, (usuario) => usuario.enderecos, {
     cascade: ["insert", "update"],
   })
-  @JoinColumn({ name: "email_usuario_endereco" })
+  @JoinColumn({ name: "email" })
   usuario: Usuario;
+
+  @PrimaryColumn()
+  email: Usuario["email"];
 }

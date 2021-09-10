@@ -7,16 +7,17 @@ export class Admin1631067435832 implements MigrationInterface {
         name: "Admin",
         columns: [
           {
-            name: "email_pessoa",
+            name: "email",
             type: "string",
+            isPrimary: true,
           },
         ],
         foreignKeys: [
           {
-            name: "UsuarioCartao",
-            columnNames: ["email_pessoa"],
+            name: "email",
+            columnNames: ["email"],
             referencedTableName: "Pessoa",
-            referencedColumnNames: ["email_pessoa"],
+            referencedColumnNames: ["email"],
             onUpdate: "CASCADE",
             onDelete: "CASCADE",
           },

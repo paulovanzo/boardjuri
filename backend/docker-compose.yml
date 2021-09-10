@@ -7,15 +7,15 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: dbuser
+      MYSQL_DATABASE: mydb
       MYSQL_ROOT_PASSWORD: DBUsers12*
-      MYSQL_USER: root
+      MYSQL_USER: dbuser
       MYSQL_PASSWORD: DBUsers12*
   backend:
     depends_on:
       - db
     build: .
-    restart: unless-stopped
+    restart: always
     command: npm run dev
     volumes:
       - ./:/usr/app/

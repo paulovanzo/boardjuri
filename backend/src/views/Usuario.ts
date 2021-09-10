@@ -3,11 +3,11 @@ import Usuario from "../entities/Usuario";
 export default {
   render(usuario: Usuario) {
     return {
-      email: usuario.email,
+      email: usuario?.email,
       //senha: usuario.senha,
       //nome: usuario.nome,
       //sobrenome: usuario.sobrenome,
-      enderecos: usuario.enderecos.map((endereco, i) => {
+      enderecos: usuario?.enderecos?.map((endereco) => {
         rua: endereco.rua;
         bairro: endereco.bairro;
         cidade: endereco.cidade;
@@ -17,7 +17,7 @@ export default {
     };
   },
 
-  renderMany(usuarios: Usuario[]) {
-    return usuarios.map((usuario) => this.render(usuario));
+  renderMany(usuarios: Usuario[] | void) {
+    return usuarios?.map((usuario) => this.render(usuario));
   },
 };

@@ -3,7 +3,6 @@ import { getRepository } from "typeorm";
 import * as yup from "yup";
 import UsuarioView from "../views/Usuario";
 import Usuario from "../entities/Usuario";
-import "reflect-metadata";
 
 export default {
   async show(req: Request, res: Response) {
@@ -11,7 +10,9 @@ export default {
 
     const UsuarioRepository = getRepository(Usuario);
 
-    let usuario = await UsuarioRepository.findOneOrFail(email);
+    let usuario = await UsuarioRepository.findOneOrFail(email).catch((err) =>
+      console.log(err)
+    );
 
     return res.json(usuario);
   },
@@ -19,9 +20,9 @@ export default {
   async index(req: Request, res: Response) {
     const UsuarioRepository = getRepository(Usuario);
 
-    let usuarios = Array();
-
-    usuarios = await UsuarioRepository.find();
+    const usuarios = await UsuarioRepository.find().catch((err) =>
+      console.log(err)
+    );
 
     console.log(usuarios);
 
@@ -29,8 +30,7 @@ export default {
   },
 
   async create(req: Request, res: Response) {
-    const { email, senha, nome, sobrenome, rua, bairro, cidade, cep } =
-      req.body;
+    const { email, senha, nome, sobrenome, nascimento } = req.body;
 
     console.log(req.body);
 
@@ -41,32 +41,24 @@ export default {
       senha,
       nome,
       sobrenome,
-      rua,
-      bairro,
-      cidade,
-      cep,
+      nascimento,
     };
 
     const schema = yup.object().shape({
-      email: yup.string().required(),
-      senha: yup.string().required(),
+      email: yup.string().required().max(50),
+      senha: yup.string().required().max(50),
       nome: yup.string().required().max(20),
       sobrenome: yup.string().required().max(20),
-      rua: yup.string().required(),
-      bairro: yup.string().required(),
-      cidade: yup.string().required(),
-      cep: yup.number().required(),
+      nascimento: yup.date(),
     });
 
-    await schema
-      .validate(data, {
-        abortEarly: false,
-      })
-      .catch((err) => console.log(err));
+    await schema.validate(data, {
+      abortEarly: false,
+    });
 
     let usuario = UsuarioRepository.create(data);
 
-    await UsuarioRepository.save(data).catch((err) => console.log(err));
+    await UsuarioRepository.save(data);
 
     return res.status(201).json(usuario);
   },

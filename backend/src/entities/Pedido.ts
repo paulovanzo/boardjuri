@@ -4,8 +4,10 @@ import {
   ManyToOne,
   JoinColumn,
   Entity,
+  OneToMany,
 } from "typeorm";
 import Cartao from "./Cartao";
+import PedidoContemBoard from "./PedidoContemBoard";
 
 @Entity("Pedido")
 export default class Pedido {
@@ -16,12 +18,19 @@ export default class Pedido {
   status: string;
 
   @Column()
-  nome: string;
+  data: Date;
 
   @Column()
-  sobrenome: string;
+  preco_total: Number;
 
-  @ManyToOne(() => Cartao, (cartao) => cartao.pedidos)
-  @JoinColumn({ name: "email_usuario_pedido" })
+  @ManyToOne(() => Cartao, (cartao: Cartao) => cartao.pedidos)
+  @JoinColumn({ name: "email" })
   cartao: Cartao;
+
+  @OneToMany(
+    () => PedidoContemBoard,
+    (pedido: PedidoContemBoard) => pedido.board
+  )
+  @JoinColumn({ name: "numero" })
+  contem: PedidoContemBoard[];
 }

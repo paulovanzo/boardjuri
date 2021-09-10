@@ -1,14 +1,7 @@
-import {
-  Column,
-  PrimaryGeneratedColumn,
-  ManyToOne,
-  JoinColumn,
-  Entity,
-} from "typeorm";
+import { Column, PrimaryColumn } from "typeorm";
 
-@Entity("Pessoa")
-export default class Pessoa {
-  @PrimaryGeneratedColumn()
+export default abstract class Pessoa {
+  @PrimaryColumn()
   email: string;
 
   @Column()

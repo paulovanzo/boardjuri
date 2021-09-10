@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Endereco1631134056535 implements MigrationInterface {
+export class Boardgame1631249348050 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "Endereco",
+        name: "Boardgame",
         columns: [
           {
             name: "id",
@@ -14,34 +14,36 @@ export class Endereco1631134056535 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "rua",
-            type: "string",
-          },
-          {
-            name: "bairro",
-            type: "string",
-          },
-          {
-            name: "cidade",
-            type: "string",
-          },
-          {
-            name: "numero",
+            name: "tipo",
             type: "number",
           },
           {
-            name: "cep",
-            type: "number",
+            name: "empresa",
+            type: "string",
+          },
+          {
+            name: "preco",
+            type: "string",
+          },
+          {
+            name: "estoque",
+            type: "string",
           },
         ],
         foreignKeys: [
           {
-            name: "UsuarioEndereco",
-            columnNames: ["email"],
-            referencedTableName: "Usuario",
-            referencedColumnNames: ["email"],
+            name: "lista",
+            columnNames: ["lista"],
+            referencedTableName: "ListaInteresse",
+            referencedColumnNames: ["descr"],
             onUpdate: "CASCADE",
-            onDelete: "CASCADE",
+          },
+          {
+            name: "id",
+            columnNames: ["id"],
+            referencedTableName: "PedidoContemBoard",
+            referencedColumnNames: ["id"],
+            onUpdate: "CASCADE",
           },
         ],
       })
@@ -49,6 +51,6 @@ export class Endereco1631134056535 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("Endereco");
+    await queryRunner.dropTable("Boardgame");
   }
 }

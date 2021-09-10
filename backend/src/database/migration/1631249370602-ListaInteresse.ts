@@ -1,25 +1,32 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Usuario1630975872355 implements MigrationInterface {
+export class ListaInteresse1631249370602 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "Usuario",
+        name: "ListaInteresse",
         columns: [
           {
-            name: "email",
+            name: "descr",
             type: "string",
+            isGenerated: false,
             isPrimary: true,
           },
         ],
         foreignKeys: [
           {
+            name: "lista",
+            columnNames: ["lista"],
+            referencedTableName: "Boardgame",
+            referencedColumnNames: ["id"],
+            onUpdate: "CASCADE",
+          },
+          {
             name: "email",
             columnNames: ["email"],
-            referencedTableName: "Pessoa",
+            referencedTableName: "Usuario",
             referencedColumnNames: ["email"],
             onUpdate: "CASCADE",
-            onDelete: "CASCADE",
           },
         ],
       })
@@ -27,6 +34,6 @@ export class Usuario1630975872355 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("Usuario");
+    await queryRunner.dropTable("ListaInteresse");
   }
 }
