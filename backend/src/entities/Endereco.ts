@@ -20,10 +20,8 @@ export default class Endereco {
 
   @ManyToOne(() => Usuario, (usuario) => usuario.enderecos, {
     cascade: ["insert", "update"],
+    primary: true,
   })
   @JoinColumn({ name: "email" })
   usuario: Usuario;
-
-  @PrimaryColumn()
-  email: Usuario["email"];
 }

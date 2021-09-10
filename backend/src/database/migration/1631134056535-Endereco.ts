@@ -7,13 +7,6 @@ export class Endereco1631134056535 implements MigrationInterface {
         name: "Endereco",
         columns: [
           {
-            name: "id",
-            type: "number",
-            isGenerated: true,
-            isPrimary: true,
-            generationStrategy: "increment",
-          },
-          {
             name: "rua",
             type: "string",
           },

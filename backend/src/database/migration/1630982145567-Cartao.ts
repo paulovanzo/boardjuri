@@ -29,14 +29,10 @@ export class Cartao1630982145567 implements MigrationInterface {
             name: "cvv",
             type: "integer",
           },
-          {
-            name: "email",
-            type: "string",
-          },
         ],
         foreignKeys: [
           {
-            name: "UsuarioCartao",
+            name: "email",
             columnNames: ["email"],
             referencedTableName: "Usuario",
             referencedColumnNames: ["email"],
