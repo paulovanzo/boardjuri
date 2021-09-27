@@ -2,7 +2,7 @@ import Endereco from "../entities/Endereco";
 
 export default {
   render(endereco: Endereco | undefined) {
-    email: endereco?.usuario.email;
+    usuario: endereco?.usuario;
     rua: endereco?.rua;
     bairro: endereco?.bairro;
     cidade: endereco?.cidade;

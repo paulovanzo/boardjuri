@@ -26,6 +26,10 @@ export class Endereco1631134056535 implements MigrationInterface {
             name: "cep",
             type: "number",
           },
+          {
+            name: "email",
+            type: "string",
+          },
         ],
         foreignKeys: [
           {

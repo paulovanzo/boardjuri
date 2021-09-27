@@ -4,19 +4,13 @@ import Usuario from "../entities/Usuario";
 
 export default {
   render(cartao: Cartao) {
-    usuarios: cartao.usuarios.map((usuario: Usuario) => {
-      email: usuario.email;
-    });
+    usuarios: cartao.usuario;
     nome: cartao.nome;
     numero: cartao.numero;
     vencimento: cartao.vencimento;
     status: cartao.status;
     cvv: cartao.cvv;
-    pedidos: cartao.pedidos?.map((pedido: Pedido) => {
-      numero: pedido.numero;
-      data: pedido.data;
-      preco_total: pedido.preco_total;
-    });
+    pedidos: cartao.pedidos;
   },
 
   renderMany(cartoes: Cartao[]) {

@@ -1,19 +1,18 @@
 import Usuario from "../entities/Usuario";
+import EnderecoView from "./Endereco";
 
 export default {
   render(usuario: Usuario) {
     return {
       email: usuario?.email,
-      //senha: usuario.senha,
+      senha: usuario?.senha,
       //nome: usuario.nome,
-      //sobrenome: usuario.sobrenome,
-      enderecos: usuario?.enderecos?.map((endereco) => {
-        rua: endereco.rua;
-        bairro: endereco.bairro;
-        cidade: endereco.cidade;
-        cep: endereco.cep;
-        numero: endereco.cep;
-      }),
+      sobrenome: usuario?.sobrenome,
+      enderecos: {
+        enderecos: () => {
+          EnderecoView.renderMany(usuario.enderecos);
+        },
+      },
     };
   },
 

@@ -24,8 +24,6 @@ export default {
       console.log(err)
     );
 
-    console.log(usuarios);
-
     return res.json(UsuarioView.renderMany(usuarios));
   },
 

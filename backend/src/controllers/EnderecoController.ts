@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import * as yup from "yup";
-import EnderecoView from "../views/Endereco";
 import Endereco from "../entities/Endereco";
 import Usuario from "../entities/Usuario";
 import "reflect-metadata";
@@ -15,16 +14,6 @@ export default {
     let endereco = await EnderecoRepository.find({ usuario: { email: email } });
 
     return res.json(endereco);
-  },
-
-  async index(req: Request, res: Response) {
-    const EnderecoRepository = getRepository(Endereco);
-
-    let enderecos = Array();
-
-    enderecos = await EnderecoRepository.find();
-
-    return res.json(EnderecoView.renderMany(enderecos));
   },
 
   async create(req: Request, res: Response) {
@@ -91,15 +80,13 @@ export default {
     usuario?.enderecos?.push({ rua, bairro, cidade, numero, cep, usuario });
     data.usuario.enderecos = usuario?.enderecos;
 
-    data.usuario;
-
-    if (usuario) {
-      await UsuarioRepository.save(usuario);
-    }
+    await UsuarioRepository.save(data.usuario);
 
     const EnderecoRepository = getRepository(Endereco);
 
     let endereco = await EnderecoRepository.create(data);
+
+    await EnderecoRepository.save(data);
 
     return res.status(201).json(endereco);
   },
