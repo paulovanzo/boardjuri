@@ -14,10 +14,18 @@ services:
   backend:
     depends_on:
       - db
-    build: .
+    build: ./backend/
     restart: always
-    command: npm run dev
+    command: yarn dev
     volumes:
-      - ./:/usr/app/
+      - ./backend/:/srv/app/
     ports:
       - "3333:3333"
+  frontend:
+    build: ./frontend/
+    restart: unless-stopped
+    command: yarn build && yarn start
+    ports: 
+      - "80:80"
+    depends_on:
+      - backend
